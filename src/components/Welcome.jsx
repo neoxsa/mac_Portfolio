@@ -25,7 +25,7 @@ const renderText = (text, className, baseWeight = 400) => {
 
 // When Hover Over the Text (Animations)
 const setupTextHover = (container, type) => {
-    if (!container) return;
+    if (!container) return () => { };
 
     const letters = container.querySelectorAll("span") // here each char is in it's own span
 
@@ -84,7 +84,7 @@ function Welcome() {
                 ref={subtitleRef}>
                 {/* render text through custom renderText function */}
                 {renderText(
-                    "Hey, I'm Neoxsa! Welcome to my", 'text-3xl font-georama',
+                    "Hey, I'm Neoxsa! Welcome to my", 'text-xl md:text-2xl xl:text-3xl font-georama',
                     100
                 )}
             </p>
@@ -92,7 +92,7 @@ function Welcome() {
                 ref={titleRef}
                 className="mt-7">
                 {renderText(
-                    "Portfolio", 'text-9xl italic font-georama'
+                    "Portfolio", 'text-6xl md:text-7xl xl:text-9xl italic font-georama'
                 )}
             </h1>
 
