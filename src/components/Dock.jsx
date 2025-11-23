@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { Tooltip } from 'react-tooltip';
 import { useRef } from 'react'
 import { dockApps } from '#constants';
-import useWindowStore from '#store/window';
+import useWindowStore from '#store/windowState';
 
 
 function Dock() {
@@ -66,14 +66,14 @@ function Dock() {
 
         if (!app.canOpen) return;
 
-        const window = windows[app.id]
+        const windowState = windows[app.id]
 
-        if (!window) {
+        if (!windowState) {
             console.log(`Window not found for ${app.id}`);
             return;
         }
 
-        if (window.isOpen) {
+        if (windowState.isOpen) {
             closeWindow(app.id);
         } else {
             openWindow(app.id);
