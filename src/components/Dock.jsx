@@ -4,6 +4,15 @@ import { Tooltip } from 'react-tooltip';
 import { dockApps } from '#constants';
 import { useRef } from 'react'
 
+/**
+ * Render an interactive dock of app icons that visually respond to pointer proximity and provide tooltips.
+ *
+ * The dock displays icons from the configured app list, disables icons that cannot be opened, shows a tooltip
+ * on hover, and animates icon scale and vertical offset based on the pointer position; pointer leaving the dock
+ * resets icons to their default state.
+ *
+ * @returns {JSX.Element} The dock section containing the app icon buttons and the tooltip instance.
+ */
 function Dock() {
     // Using ref to target the elements to make animation
     const dockRef = useRef(null);
