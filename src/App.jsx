@@ -1,11 +1,11 @@
-import Navbar from '#components/Navbar'
-import React from 'react'
+import { Navbar, Welcome } from '#components/index'
 
 function App() {
-  return ( 
-   <main>
-     <Navbar />
-   </main>
+  return (
+    <main>
+      <Navbar />
+      <Welcome />
+    </main>
   )
 }
 
