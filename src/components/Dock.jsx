@@ -1,12 +1,17 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Tooltip } from 'react-tooltip';
-import { dockApps } from '#constants';
 import { useRef } from 'react'
+import { dockApps } from '#constants';
+import useWindowStore from '#store/window';
+
 
 function Dock() {
     // Using ref to target the elements to make animation
     const dockRef = useRef(null);
+
+    // windows
+    const { openWindow, closeWindow, windows } = useWindowStore()
 
     // Adding Animations (GSAP)
     useGSAP(() => {
@@ -56,10 +61,27 @@ function Dock() {
 
 
 
-    // Dock App Handler
+    // Dock App Window Handler
     const toggleApp = (app) => {
-        // TODO: Implement Open Window Logic
+
+        if (!app.canOpen) return;
+
+        const window = windows[app.id]
+
+        if (!window) {
+            console.log(`Window not found for ${app.id}`);
+            return;
+        }
+
+        if (window.isOpen) {
+            closeWindow(app.id);
+        } else {
+            openWindow(app.id);
+        }
+
+        console.log(windows); // Check
     }
+
     return (
         <section id='dock'>
             <div

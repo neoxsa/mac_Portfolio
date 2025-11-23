@@ -490,6 +490,10 @@ export const locations = {
   trash: TRASH_LOCATION,
 };
 
+
+// Windows State Zustand
+// for window over a opened window 
+
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
