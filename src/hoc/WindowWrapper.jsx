@@ -20,11 +20,18 @@ function WindowWrapper(Component, windowKey) {
 
             if (!element || !isOpen) return;
 
-            element.style.display = "block"
-
-            gsap.fromTo(element, { scale: 0.8, opacity: 0, y: 40 },
-                { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
-            )
+            if (isOpen) {
+                element.style.display = "block";
+                gsap.fromTo(element,
+                    { scale: 0.8, opacity: 0, y: 40 },
+                    { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+                );
+            } else {
+                gsap.to(element, {
+                    scale: 0.8, opacity: 0, y: 40, duration: 0.3, ease: "power3.in",
+                    onComplete: () => { element.style.display = "none"; }
+                });
+            }
         }, [isOpen])
 
         // Drag Effect (Window element)
@@ -32,7 +39,7 @@ function WindowWrapper(Component, windowKey) {
             const element = ref.current;
             if (!element) return;
 
-            const [instance] =  Draggable.create(element, { onPress: () => focusWindow(windowKey) });
+            const [instance] = Draggable.create(element, { onPress: () => focusWindow(windowKey) });
 
             return () => instance.kill();
         }, []);

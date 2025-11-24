@@ -78,8 +78,6 @@ function Dock() {
         } else {
             openWindow(app.id);
         }
-
-        console.log(windows); // Check
     }
 
     return (

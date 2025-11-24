@@ -13,7 +13,7 @@ function WindowControl({ target }) {
                 onClick={() => minimizeWindow(target)}></div>
             <div
                 className="maximize"
-                onClick={closeWindow} ></div>
+                onClick={() => closeWindow(target)} ></div>
         </div>
     );
 };
