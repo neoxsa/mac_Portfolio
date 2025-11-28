@@ -15,7 +15,7 @@ function Terminal() {
             <div className='techstack'>
                 <p>
                     <span className='font-bold'>
-                        @neoxsa %&nbsp;
+                        @apple %&nbsp;
                     </span>
                     show tech stack
                 </p>

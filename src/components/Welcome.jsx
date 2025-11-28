@@ -84,7 +84,7 @@ function Welcome() {
                 ref={subtitleRef}>
                 {/* render text through custom renderText function */}
                 {renderText(
-                    "Hey, I'm Neoxsa! Welcome to my", 'text-xl md:text-2xl xl:text-3xl font-georama',
+                    "Hey, I'm ", 'text-xl md:text-2xl xl:text-3xl font-georama',
                     100
                 )}
             </p>
@@ -92,7 +92,7 @@ function Welcome() {
                 ref={titleRef}
                 className="mt-7">
                 {renderText(
-                    "Portfolio", 'text-6xl md:text-7xl xl:text-9xl italic font-georama'
+                    "NeoXsa", 'text-6xl md:text-7xl xl:text-9xl italic font-georama text-green-500'
                 )}
             </h1>
 
