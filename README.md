@@ -1,16 +1,60 @@
-# React + Vite
+# 🍎 macOS Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, interactive macOS-inspired portfolio website with draggable windows, smooth animations, and modern web technologies.
 
-Currently, two official plugins are available:
+## ✨ Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend:** React 19 • Vite • Tailwind CSS 4 • GSAP 3
+**State:** Zustand • Immer
+**Tools:** ESLint • Lucide React • React PDF • React Tooltip
 
-## Expanding the ESLint configuration
+## 📁 Folder Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/    # Dock, Navbar, Welcome
+├── constants/     # Projects, skills, tech stack config
+├── hoc/          # WindowWrapper HOC
+├── store/        # Zustand window state
+├── windows/      # Resume viewer and other windows
+```
+
+## 📜 Available Scripts
+
+```bash
+npm run dev      # Start dev server
+npm run build    # Build for production
+npm run preview  # Preview build
+npm run lint     # Check code quality
+```
+
+## 🎨 Customize
+
+- Edit `src/constants/index.js` to update projects, skills, and bio
+- Update `/public/files/resume.pdf` with your resume
+- Modify Tailwind styles in components as needed
+
+## 📚 Learning & Credits
+
+This project was created following the **[JsMastery macOS Portfolio Tutorial](https://www.youtube.com/watch?v=j9ZD_hlyHOA&list=LL)** - an excellent resource for learning professional web development practices.
+
+The tutorial teaches:
+- Component composition and reusable patterns
+- State management with Zustand
+- Advanced GSAP animations
+- Responsive design with Tailwind CSS
+- Clean code organization and project structure
+- Professional development workflows
+
+**Special thanks to JsMastery** for the clear, educational content and clean coding methodology that guided this project's architecture and best practices.
+
+---
+
+ Happy coding! 🚀
